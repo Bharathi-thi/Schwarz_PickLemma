@@ -170,7 +170,7 @@ lemma Schwarz_Pick_lemma
   (h₀ : f 0 = 0) :
   ∀ z₁ z₂ : ball 0 1, pseudoHyp (f z₁) (f z₂) ≤ pseudoHyp z₁ z₂ := by
   intros z₁ z₂
-  sorry
+  sorry 
 
 end Space
 
