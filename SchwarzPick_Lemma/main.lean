@@ -152,3 +152,26 @@ theorem Aut_group_of_unit_disc : ∀ (f : ℂ → ℂ),
         simp only [Function.comp_apply, g] at hw₂
         field_simp [ne_of_lt (lt_of_lt_of_le (norm_lt_one_iff_mem_ball.mpr hz) (by norm_num : 1 ≤ 1))]
         ring
+/-# Schwarz Pick Lemma-/
+
+-- Pseudo-hyperbolic metric on the unit disc
+noncomputable def pseudoHyp (z w : ℂ) : ℝ :=
+  ‖(z - w) / (1 - conj w * z)‖
+
+
+/- The Schwarz Pick lemma states that if `f` is a holomorphic function from the unit disc to itself, then  ∀ z₁ z₂ ∈ ball 0 1, pseudoHyp (f z₁) (f z₂) ≤ pseudoHyp z₁ z₂. -/
+
+
+
+
+lemma Schwarz_Pick_lemma
+  (hf : DifferentiableOn ℂ f (ball 0 1))
+  (h_maps : MapsTo f (ball 0 1) (ball 0 1))
+  (h₀ : f 0 = 0) :
+  ∀ z₁ z₂ : ball 0 1, pseudoHyp (f z₁) (f z₂) ≤ pseudoHyp z₁ z₂ := by
+  intros z₁ z₂
+  sorry
+
+end Space
+
+end Complex
